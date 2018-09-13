@@ -1,12 +1,12 @@
 #!/bin/bash -e
 
 if [[ -z "$TOMCAT_USER" ]]; then
-	>&2 echo "Please specify a TOMCAT_USER environment variable"
+	>&2 echo "Veuillez spécifier un nom d'utilisateur pour la  variable d'environnement: TOMCAT_USER"
     exit 1
 fi
 
 if [[ -z "$TOMCAT_PASSWORD" ]]; then
-	>&2 echo "Please specify a TOMCAT_PASSWORD environment variable"
+	>&2 echo "Veuillez spécifier un mot de passe pour la  variable d'environnement:TOMCAT_PASSWORD"
     exit 1
 fi
 
