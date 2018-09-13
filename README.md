@@ -1,9 +1,10 @@
 # BIMserver
 
-Le serveur Building Information Model (court: BIMserver) vous permet de stocker et de gérer les informations d'un projet de construction (ou d'un autre projet lié au bâtiment). Les données sont stockées dans le standard ouvert IFC. BIMserver n'est pas un serveur de fichiers, mais utilise une approche basée sur des modèles. Cela signifie que les données IFC sont stockées dans une base de données sous-jacente. Le principal avantage de cette approche est la possibilité d'interroger, de fusionner et de filtrer le modèle BIM et de générer des fichiers IFC à la volée.pour plus de details voir le site officiel:http://www.bimserver.org
+Le serveur Building Information Model (court: BIMserver) vous permet de stocker et de gérer les informations d'un projet de construction (ou d'un autre projet lié au bâtiment). Les données sont stockées dans le standard ouvert IFC. BIMserver n'est pas un serveur de fichiers, mais utilise une approche basée sur des modèles. Cela signifie que les données IFC sont stockées dans une base de données sous-jacente. Le principal avantage de cette approche est la possibilité d'interroger, de fusionner et de filtrer le modèle BIM et de générer des fichiers IFC à la volée.pour plus de details voir le site officiel: http://www.bimserver.org
 
-Déployer BIMserver dans un conteneur Docker
-c'est un Fork depuisle projet de : https://github.com/px3l/BIMserver
+#### BIMserver pour Docker [FR]
+Déployer BIMserver dans un conteneur Docker 
+c'est un Fork depuis le projet de : https://github.com/px3l/BIMserver
 avec la traduction en francais et la mise a jour de la version du BIMserver 1.5.101 du 18 mai 2018
 
 #### BIMserver 1.5.101
@@ -31,4 +32,4 @@ Cela expose le port 8080 de votre hôte, donc si vous visitez le serveur: 8080 /
 
 #### BIMserver 1.5.101 local
 
-un `docker run` votre machine locale et visite localhost: 8080 / BIMserver
+un `docker run` sur votre machine locale puis visite localhost: 8080/
