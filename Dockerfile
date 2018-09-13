@@ -4,7 +4,7 @@
 ############################################################
 
 FROM ubuntu
-MAINTAINER px3l@tuta.io
+MAINTAINER khero22@gmail.com
 
 # Initial OS setup
 
@@ -16,7 +16,7 @@ RUN apt-get -y update && apt-get -y install \
 	git \
 	ant \
 	wget
-RUN echo "Europe/London" > /etc/timezone
+RUN echo "Europe/paris" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 ################## BEGIN INSTALLATION ######################
@@ -40,10 +40,10 @@ RUN chown -R tomcat /opt/tomcat/work/ /opt/tomcat/temp/ /opt/tomcat/logs/
 RUN chown -R tomcat /opt && chown -R tomcat /opt/tomcat/webapps
 RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
-# Download BIMserver into /webapps for autodeploy
-
-RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/parent-1.5.63/bimserverwar-1.5.63.war \
-	-O /opt/tomcat/webapps/BIMserver.war
+# Download BIMserver into /webapps for autodeploy and remove root replaced by BimServer
+RUN rm -rf /opt/tomcat/webapps/ROOT
+RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/v1.5.101/bimserverwar-1.5.101.war \
+	-O /opt/tomcat/webapps/ROOT.war
 
 # Set environment paths for Tomcat
 
