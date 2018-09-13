@@ -1,16 +1,20 @@
 # BIMserver
 
-Deploy BIMserver in a Docker container
+Le serveur Building Information Model (court: BIMserver) vous permet de stocker et de gérer les informations d'un projet de construction (ou d'un autre projet lié au bâtiment). Les données sont stockées dans le standard ouvert IFC. BIMserver n'est pas un serveur de fichiers, mais utilise une approche basée sur des modèles. Cela signifie que les données IFC sont stockées dans une base de données sous-jacente. Le principal avantage de cette approche est la possibilité d'interroger, de fusionner et de filtrer le modèle BIM et de générer des fichiers IFC à la volée.pour plus de details voir le site officiel:http://www.bimserver.org
 
-#### BIMserver 1.5.63 remote
+Déployer BIMserver dans un conteneur Docker
+c'est un Fork depuisle projet de : https://github.com/px3l/BIMserver
+avec la traduction en francais et la mise a jour de la version du BIMserver 1.5.101 du 18 mai 2018
 
-Deploys on a remote server with Ubuntux64:latest. The Dockerfile will install dependencies such as JDK and Tomcat and then install BIMserver into the webapps dir inside Tomcats home. Simply SSH into a server, install Docker with
+#### BIMserver 1.5.101
+
+Se déploie sur un serveur distant avec Ubuntux64: la plus récente. Le fichier Dockerfile installera des dépendances telles que JDK et Tomcat, puis installera BIMserver dans le répertoire webapps de Tomcats home. Avec Un Simple SSH dans un serveur, installez Docker avec:
 
 ```bash
 $ wget -qO- https://get.docker.com/ | sh
 ```
 
-and run the following (change username and password to your own choice):
+et exécutez ce qui suit (changez le nom d'utilisateur et le mot de passe pour choisir votre propre choix):
 
 ```bash
 $ docker run -d \
@@ -18,13 +22,13 @@ $ docker run -d \
 	-e TOMCAT_PASSWORD=xxx \
 	-p 8080:8080 \
 	--restart=always \
-	px3l/bimserver
+	khero22/bimserver
 ```
 
-This will pull the 'latest' tagged image. For other tags please see Tags on Dockerhub. To use a specific tag, put `:TAGNAME` after the docker image at the end of the run command.
+Cela va tirer la dernière image étiquetée. Pour les autres balises, veuillez voir Tags sur Dockerhub. Pour utiliser une balise spécifique, mettez `: TAGNAME` après l'image du docker à la fin de la commande run.
 
-This exposes port 8080 of your host, so if you visit server:8080/BIMserver you will be able to then set up a BIMserver as desired.
+Cela expose le port 8080 de votre hôte, donc si vous visitez le serveur: 8080 / BIMserver, vous pourrez configurer un serveur BIM comme vous le souhaitez.
 
-#### BIMserver 1.5.63 local
+#### BIMserver 1.5.101 local
 
-Alternatively, `docker run` your local machine and then visit localhost:8080/BIMserver
+un `docker run` votre machine locale et visite localhost: 8080 / BIMserver
