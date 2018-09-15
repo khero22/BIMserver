@@ -10,14 +10,13 @@ MAINTAINER khero22@gmail.com
 
 RUN apt-get update
 RUN apt-get -y install software-properties-common && \
-	add-apt-repository -y ppa:openjdk-r/ppa
+	add-apt-repository  ppa:openjdk-r/ppa
 RUN apt-get -y update && apt-get -y install \
 	openjdk-8-jdk \
 	git \
 	ant \
 	wget
-RUN echo "Europe/paris" > /etc/timezone
-RUN dpkg-reconfigure -f noninteractive tzdata
+RUN apt-get clean
 
 ################## BEGIN INSTALLATION ######################
 
@@ -26,10 +25,10 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 RUN mkdir /opt/tomcat
 RUN groupadd tomcat
 RUN useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
-RUN wget http://apache.mirror.anlx.net/tomcat/tomcat-8/v8.0.39/bin/apache-tomcat-8.0.39.tar.gz \
-	-O /tmp/apache-tomcat-8.0.30.tar.gz
-RUN tar xvf /tmp/apache-tomcat-8.0.30.tar.gz -C /opt/tomcat --strip-components=1
-RUN rm -f /tmp/apache-tomcat-8.0.30.tar.gz
+RUN wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz \
+	-O /tmp/apache-tomcat-8.5.34.tar.gz
+RUN tar xvf /tmp/apache-tomcat-8.5.34.tar.gz -C /opt/tomcat --strip-components=1
+RUN rm -f /tmp/apache-tomcat-8.5.34.tar.gz
 
 # Set permissions for group and user to install BIMserver and edit conf
 
@@ -41,9 +40,9 @@ RUN chown -R tomcat /opt && chown -R tomcat /opt/tomcat/webapps
 RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
 # Download BIMserver into /webapps for autodeploy and remove root replaced by BimServer
-RUN rm -rf /opt/tomcat/webapps/ROOT
-RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/v1.5.101/bimserverwar-1.5.101.war \
-	-O /opt/tomcat/webapps/ROOT.war
+
+RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/v1.5.101/bimserverwar-1.5.101.war
+	-O /opt/tomcat/webapps/BIMserver.war
 
 # Set environment paths for Tomcat
 
