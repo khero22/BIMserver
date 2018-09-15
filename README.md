@@ -1,5 +1,5 @@
 # BIMserver
-
+![alt tag](http://bimserver.org/images/logo.gif)
 Le serveur Building Information Model (court: BIMserver) vous permet de stocker et de gérer les informations d'un projet de construction (ou d'un autre projet lié au bâtiment). Les données sont stockées dans le standard ouvert IFC. BIMserver n'est pas un serveur de fichiers, mais utilise une approche basée sur des modèles. Cela signifie que les données IFC sont stockées dans une base de données sous-jacente. Le principal avantage de cette approche est la possibilité d'interroger, de fusionner et de filtrer le modèle BIM et de générer des fichiers IFC à la volée.pour plus de details voir le site officiel: http://www.bimserver.org
 
 #### BIMserver pour Docker [FR]
@@ -23,7 +23,7 @@ $ docker run -d \
 	-e TOMCAT_PASSWORD=xxx \
 	-p 8080:8080 \
 	--restart=always \
-	khero22/bimserver
+	khero22/bimserver:1.5.101
 ```
 
 Cela va tirer la dernière image étiquetée. Pour les autres balises, veuillez voir Tags sur Dockerhub. Pour utiliser une balise spécifique, mettez `: TAGNAME` après l'image du docker à la fin de la commande run.
@@ -32,4 +32,4 @@ Cela expose le port 8080 de votre hôte, donc si vous visitez le serveur: 8080 /
 
 #### BIMserver 1.5.101 local
 
-un `docker run` sur votre machine locale puis visite localhost: 8080/
+un `docker run` sur votre machine locale puis visite la page web :  localhost:8080/BIMserver
