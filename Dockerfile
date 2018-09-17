@@ -6,7 +6,7 @@
 FROM ubuntu
 MAINTAINER khero22@gmail.com
 
-# Initial OS setup
+# Initial OS setup #########################################
 
 RUN apt-get update
 RUN apt-get -y install software-properties-common && \
@@ -44,7 +44,7 @@ RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/v1.5.101/bimserverwar-1.5.101.war
 	-O /opt/tomcat/webapps/BIMserver.war
 
-# Set environment paths for Tomcat
+# Set environment paths for Tomcat ############################
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 ENV CATALINA_HOME=/opt/tomcat
