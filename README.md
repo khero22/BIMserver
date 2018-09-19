@@ -5,9 +5,9 @@ Le serveur Building Information Model (court: BIMserver) vous permet de stocker 
 #### BIMserver pour Docker [FR]
 Déployer BIMserver dans un conteneur Docker 
 c'est un Fork depuis le projet de : https://github.com/px3l/BIMserver
-avec la traduction en francais et la mise a jour de la version du BIMserver 1.5.101 du 18 mai 2018
+avec la traduction en francais et la mise a jour de la version du BIMserver 1.5.108 du 19 septembre 2018
 
-#### BIMserver 1.5.101
+#### BIMserver 1.5.108
 
 Se déploie sur un serveur distant avec Ubuntux64: la plus récente. Le fichier Dockerfile installera des dépendances telles que JDK et Tomcat, puis installera BIMserver dans le répertoire webapps de Tomcats home. Avec Un Simple SSH dans un serveur, installez Docker avec:
 
@@ -23,13 +23,14 @@ $ docker run -d \
 	-e TOMCAT_PASSWORD=xxx \
 	-p 8080:8080 \
 	--restart=always \
-	khero22/bimserver:1.5.101
+	khero22/bimserver:1.5.108
+	
 ```
 
 Cela va tirer la dernière image étiquetée. Pour les autres balises, veuillez voir Tags sur Dockerhub. Pour utiliser une balise spécifique, mettez `: TAGNAME` après l'image du docker à la fin de la commande run.
 
 Cela expose le port 8080 de votre hôte, donc si vous visitez le serveur: 8080 / BIMserver, vous pourrez configurer un serveur BIM comme vous le souhaitez.
 
-#### BIMserver 1.5.101 local
+#### BIMserver 1.5.108 local
 
 un `docker run` sur votre machine locale puis visite la page web :  localhost:8080/BIMserver
