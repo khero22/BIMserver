@@ -41,7 +41,7 @@ RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
 # Download BIMserver into /webapps for autodeploy and remove root replaced by BimServer
 
-RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/v1.5.108/bimserverwar-1.5.108.war
+RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/v1.5.108/bimserverwar-1.5.108.war \
 	-O /opt/tomcat/webapps/BIMserver.war
 
 # Set environment paths for Tomcat ############################
